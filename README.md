@@ -24,16 +24,19 @@ Suggested implementation of (above) webapp to GAE
 
 1. Add to maven
 
+```
     &lt;dependency&gt;
         &lt;groupId&gt;com.auth0&lt;/groupId&gt;
         &lt;artifactId&gt;auth0-servlet&lt;/artifactId&gt;
         &lt;version&gt;2.0&lt;/version&gt;
     &lt;/dependency&gt;
+```
     
 2. Add GAEAuth0Callback files to your source
 
 3. Instead of using Auth0Callback, use this setup in web.xml
 
+```
     &lt;!-- Auth0 servlets --&gt;
     &lt;servlet&gt;
         &lt;servlet-name&gt;RedirectCallback&lt;/servlet-name&gt;
@@ -59,5 +62,6 @@ Suggested implementation of (above) webapp to GAE
         &lt;servlet-name&gt;RedirectCallback&lt;/servlet-name&gt;
         &lt;url-pattern&gt;/auth0-callback/&lt;/url-pattern&gt;
     &lt;/servlet-mapping&gt;
+```
 
   
