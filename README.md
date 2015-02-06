@@ -25,11 +25,11 @@ Suggested implementation of (above) webapp to GAE
 1. Add to maven
 
 ```
-    &lt;dependency&gt;
-        &lt;groupId&gt;com.auth0&lt;/groupId&gt;
-        &lt;artifactId&gt;auth0-servlet&lt;/artifactId&gt;
-        &lt;version&gt;2.0&lt;/version&gt;
-    &lt;/dependency&gt;
+    <dependency>
+        <groupId>com.auth0</groupId>
+        <artifactId>auth0-servlet</artifactId>
+        <version>2.0</version>
+    </dependency>
 ```
     
 2. Add GAEAuth0Callback files to your source
@@ -37,31 +37,31 @@ Suggested implementation of (above) webapp to GAE
 3. Instead of using Auth0Callback, use this setup in web.xml
 
 ```
-    &lt;!-- Auth0 servlets --&gt;
-    &lt;servlet&gt;
-        &lt;servlet-name&gt;RedirectCallback&lt;/servlet-name&gt;
-        &lt;servlet-class&gt;com.auth0.gae.GAEAuth0Callback&lt;/servlet-class&gt;
-    &lt;init-param&gt;
-        &lt;param-name&gt;auth0.redirect_on_success&lt;/param-name&gt;
-        &lt;param-value&gt;/auth0/&lt;/param-value&gt;
-    &lt;/init-param&gt;
-    &lt;init-param&gt;
-        &lt;param-name&gt;auth0.redirect_on_error&lt;/param-name&gt;
-        &lt;param-value&gt;/signin/&lt;/param-value&gt;
-    &lt;/init-param&gt;
-    &lt;init-param&gt;
-        &lt;param-name&gt;gae.auth0.token_attribute_key&lt;/param-name&gt;
-        &lt;param-value&gt;auth0tokens&lt;/param-value&gt;
-    &lt;/init-param&gt;
-    &lt;init-param&gt;
-        &lt;param-name&gt;gae.auth0.user_attribute_key&lt;/param-name&gt;
-        &lt;param-value&gt;user&lt;/param-value&gt;
-    &lt;/init-param&gt;
-    &lt;/servlet&gt;
-    &lt;servlet-mapping&gt;
-        &lt;servlet-name&gt;RedirectCallback&lt;/servlet-name&gt;
-        &lt;url-pattern&gt;/auth0-callback/&lt;/url-pattern&gt;
-    &lt;/servlet-mapping&gt;
+    <!-- Auth0 servlets -->
+    <servlet>
+        <servlet-name>RedirectCallback</servlet-name>
+        <servlet-class>com.auth0.gae.GAEAuth0Callback</servlet-class>
+    <init-param>
+        <param-name>auth0.redirect_on_success</param-name>
+        <param-value>/auth0/</param-value>
+    </init-param>
+    <init-param>
+        <param-name>auth0.redirect_on_error</param-name>
+        <param-value>/signin/</param-value>
+    </init-param>
+    <init-param>
+        <param-name>gae.auth0.token_attribute_key</param-name>
+        <param-value>auth0tokens</param-value>
+    </init-param>
+    <init-param>
+        <param-name>gae.auth0.user_attribute_key</param-name>
+        <param-value>user</param-value>
+    </init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>RedirectCallback</servlet-name>
+        <url-pattern>/auth0-callback/</url-pattern>
+    </servlet-mapping>
 ```
 
   
